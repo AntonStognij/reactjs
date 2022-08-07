@@ -14,11 +14,19 @@
   color: white;
 }
 
+.active{
+  color: rgb(205, 158, 31);
+  font-weight: bold;
+}
+
 .menu {
   display: flex;
   list-style-type:none;
   margin-top: 0;
-  justify-content: space-around
+  justify-content: space-around;
+  padding-left: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid white;
 }
 
 .menu li:hover{
@@ -36,9 +44,12 @@
 }
 .foto {
  width:20%;
+ height: 230px;
  display: flex;
  justify-content: center;
  position: relative;
+ border-radius: 15px;
+ overflow: hidden;
 }
 
 .block-manu {
@@ -60,7 +71,7 @@ img {
 }
 
 li {
-  margin-left: 5%;
+  margin-left: 3%;
 }
 
 .My-foto {
