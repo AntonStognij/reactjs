@@ -1,24 +1,29 @@
-import './App.css';
-import Heder from './components/heder'
-import Manu from './components/manu'
-import Content from './components/content'
-import {myDescription, content} from './components/info'
 
+import './App.css';
+import React, {useState} from "react";
+import Tasks from './components/tasks'
 function App() {
+
+  const [tasks, setTasks] = useState([])
+  function addTasks (){
+    
+    let text = document.querySelector(".textValue").value
+    console.log("includes",tasks.includes(text))
+    if(text && !tasks.includes(text) ){
+      setTasks([...tasks, text]);
+      document.querySelector(".textValue").value = ""
+    }
+  }
   return (
     <div className="App">
-      <div className = "wrap">
-        {Heder(myDescription.name, "App-header")}
-          <div className = "content">
-          <div className = "block-manu">
-          {Manu("menu", myDescription.description, "elem-manu")}
-          {Content ("info", content)}
-          </div>
-          <div className = "foto">
-          <img className = "My-foto" src="/img/I.JPEG" alt="My foto"/>
-         </div>
-          </div>
-      </div>
+     <h1>Вкажіть , що ви плануєте зробити!</h1>
+     <div className= "tasks">
+     <input type="text" className='textValue'></input>
+        <button onClick={()=>addTasks()}>Додати</button> 
+        <div className="blockTasks">
+       {Tasks (tasks, "list")}
+        </div>
+     </div>
     </div>
   );
 }

@@ -1,79 +1,39 @@
-.App-header {
+body {
+	background: linear-gradient(90deg, #f598a8, #f6edb2);
+}
+
+.App {
   text-align: center;
-  width: 100%;
 }
 
-.App{
-  background-color: #282c34;
-  min-height: 100vh;
+.textValue {
+  width: 250px;
+}
+.comlete {
+  text-decoration:line-through;
+
+}
+.blockTasks {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 50%;
 }
-
-.active{
-  color: rgb(205, 158, 31);
-  font-weight: bold;
-}
-
-.menu {
+.blocTask {
+  width: 700px;
   display: flex;
-  list-style-type:none;
-  margin-top: 0;
-  justify-content: space-around;
-  padding-left: 0;
-  padding-bottom: 10px;
-  border-bottom: 1px solid white;
+  align-items: center
 }
 
-.menu li:hover{
-  cursor: pointer;
-  color: rgb(205, 158, 31);
-}
-.wrap {
-  background: #686868;
-  padding: 20px;
-  border-radius: 15px;
-  margin-top: 25px;
- height: 80vh;
- width: 800px;
- font-size: 18px;
-}
-.foto {
- width:20%;
- height: 230px;
- display: flex;
- justify-content: center;
- position: relative;
- border-radius: 15px;
- overflow: hidden;
+.list{
+  text-align: left;
 }
 
-.block-manu {
+.task {
   width: 70%;
+  overflow-x: auto;
+
 }
 
-.info {
-  margin: 0;
-  padding: 30px;
+.botton {
+  margin-left: 15px;
 }
 
-.content {
-  display: flex;
-  justify-content: space-around;
- 
-} 
-img {
-  width: 200px;
-}
-
-li {
-  margin-left: 3%;
-}
-
-.My-foto {
-  position: absolute;
-}
