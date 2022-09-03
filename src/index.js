@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import App from "./app";
 import ReactDOM from 'react-dom';
 import { ContextUser, ContextTask } from "store/context";
+import { createRoot } from 'react-dom/client';
+import './styles/all'
 
+const container = document.getElementById('root');
+const root = createRoot(container);
 function Init() {
     const [user, setUser] = useState({})
     const [task, setTask] = useState([])
@@ -17,7 +21,7 @@ function Init() {
     )
 }
 
-ReactDOM.render(<Init />, document.getElementById('root'));
+root.render(<Init />);
 
 const devMode = process.env.NODE_ENV === "development"
 if(devMode && module && module.hot){

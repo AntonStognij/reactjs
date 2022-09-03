@@ -4,9 +4,9 @@ import {ContextUser} from "store/context";
 const Header = () => {
     const {user, setUser} = useContext(ContextUser)
         useEffect(() => {
-        fetch('https://pokeapi.co/api/v2/pokemon/1')
-            .then(res => res.json())
-            .then(res => setUser(res))
+            fetch('https://fakestoreapi.com/products')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
     }, [])
     return (
         <header>
