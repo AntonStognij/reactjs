@@ -1,6 +1,6 @@
 import React from "react";
 
-const ContextUser = React.createContext()
-const ContextTask = React.createContext()
+const ContextGoods = React.createContext()
 
-export { ContextUser, ContextTask }
+
+export { ContextGoods }

@@ -1,22 +1,20 @@
 import React, { useState } from "react";
 import App from "./app";
-import ReactDOM from 'react-dom';
-import { ContextUser, ContextTask } from "store/context";
+
+import { ContextGoods } from "store/context";
 import { createRoot } from 'react-dom/client';
 import './styles/all'
 
 const container = document.getElementById('root');
 const root = createRoot(container);
+
 function Init() {
-    const [user, setUser] = useState({})
-    const [task, setTask] = useState([])
+    const [goods, setGoods] = useState([])
     return (
         <React.StrictMode>
-            <ContextUser.Provider value={{user, setUser}}>
-                <ContextTask.Provider value={{task, setTask}}>
+            <ContextGoods.Provider value={{goods, setGoods}}>
                     <App/>
-                </ContextTask.Provider>
-            </ContextUser.Provider>
+            </ContextGoods.Provider>
         </React.StrictMode>
     )
 }

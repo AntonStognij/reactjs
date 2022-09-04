@@ -1,0 +1,35 @@
+.goods {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .good{
+        width: 30%;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #eef0ef;
+        margin-top: 25px;
+        .shopping{
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: stretch;
+            border: none;
+           svg {
+            color: white;
+           }
+        }
+        .img-good{
+            height: 350px;
+            margin-bottom: 10px;
+        }
+        .goods-block-text{
+            display: flex;
+            justify-content: space-around;
+        }
+        .price{
+            color: #aec680;
+            font-size: 20px;
+        }
+    }
+}
