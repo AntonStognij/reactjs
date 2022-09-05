@@ -17,7 +17,6 @@ const Goods = () =>  {
         e.stopPropagation();
         if (!serchElem(choice, id)){
             choice.push(choiceGoods)
-            setСhoice(choice)
         }     
         let purchaseCount = choice.length;
         setСhoice(choice)

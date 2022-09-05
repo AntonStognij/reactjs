@@ -1,10 +1,9 @@
 import React, {useContext} from "react";
-import { ContextPurchase, ContextСhoice } from "store/context";
+import { ContextСhoice } from "store/context";
 
 
 const Header = () => {
     
-    const {purchase, setPurchase} = useContext(ContextPurchase)
     const {choice, setСhoice} = useContext(ContextСhoice)
     return (
         <header>
