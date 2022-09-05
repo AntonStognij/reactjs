@@ -5,7 +5,6 @@ import { ContextPurchase } from "store/context";
 const Header = () => {
     
     const {purchase, setPurchase} = useContext(ContextPurchase)
-    console.log ("purchase =>", purchase)
     return (
         <header>
         <div className="header-block-one-bg">

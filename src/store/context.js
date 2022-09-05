@@ -2,6 +2,7 @@ import React from "react";
 
 const ContextGoods = React.createContext()
 const ContextPurchase = React.createContext()
-const test = "test"
+const ContextСhoice = React.createContext()
 
-export { ContextGoods , ContextPurchase, test}
+
+export { ContextGoods , ContextPurchase, ContextСhoice}

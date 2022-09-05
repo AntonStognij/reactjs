@@ -15,9 +15,6 @@
             display: flex;
             align-items: stretch;
             border: none;
-           svg {
-            color: white;
-           }
         }
         .img-good{
             height: 350px;
@@ -31,5 +28,9 @@
             color: #aec680;
             font-size: 20px;
         }
+        .svg {
+            z-index: -1;
+        }
     }
 }
+
