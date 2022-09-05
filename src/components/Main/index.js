@@ -5,7 +5,7 @@ import Goods from "../Goods"
 
 const Main = () => {
     return (
-        <div>
+        <main id="main">
             <img className = "slider" src= {photo} alt="slider"/>
             <h2 className="wrap h2">FEATURED PRODUCTS</h2>
             <div className="wrap catalog">
@@ -16,7 +16,7 @@ const Main = () => {
             </div>
             </div>
             
-        </div>
+        </main>
         
     )
 }
