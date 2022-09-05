@@ -1,0 +1,43 @@
+.basket-good{
+    height: 150px;
+    display: flex;
+    border: 1px solid #eef0ef;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    h3 {
+        margin-top: 20px;
+        font-size: 28px;
+    }
+    p {
+        font-size: 24px;
+        margin-top: 5px;
+        color: #aec680;
+    }
+   
+    .btn-del{
+        background: rgb(191, 53, 53);
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        padding: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       margin-left: 50px;
+    }
+    .basket-img-good{
+        height: 145px;
+    }
+}
+
+.make{
+    margin: 0 auto;
+    display: block;
+ }
+ .empty{
+    text-align: center;
+    font-size: 30px;
+ }

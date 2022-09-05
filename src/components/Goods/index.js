@@ -13,14 +13,15 @@ const Goods = () =>  {
     }, [])
 
     //функция меняет количество покупок + сохраняет выбор в сторе
-    function savePurchase (purchase, choiceGoods, e) {
+    function savePurchase (choiceGoods, e, id) {
         e.stopPropagation();
-        purchase++
-        setPurchase(purchase)
-        choice.push(choiceGoods)
+        if (!serchElem(choice, id)){
+            choice.push(choiceGoods)
+            setСhoice(choice)
+        }     
+        let purchaseCount = choice.length;
         setСhoice(choice)
-        console.log(choice)
-       
+        setPurchase(purchaseCount)
     }
     //отрисовівает выбранные товар
     const showElem = (elem, arr, e) => {
@@ -55,7 +56,7 @@ const Goods = () =>  {
          //клик на кнопку
         let elementHtml = document.querySelector(".btn-purch")
         elementHtml.addEventListener("click", function(event){
-            savePurchase (purchase, elemWithArr, event)
+            savePurchase (elemWithArr, event, elemWithArr.id)
        
         })
         }
@@ -71,8 +72,8 @@ const Goods = () =>  {
                             <p>{el.title}</p>
                             <p className="price">$ {el.price}</p>
                         </div>
-                        <button className="shopping btn" data-id = {el.id}  onClick={(e) => savePurchase (purchase, el, e)}>
-                        <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" onClick={(e) => savePurchase (purchase, el, e)}><path onClick={(e) => savePurchase (purchase, el, e)} d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/></svg>
+                        <button className="shopping btn" data-id = {el.id}  onClick={(e) => savePurchase ( el, e, el.id)}>
+                        <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" onClick={(e) => savePurchase ( el, e, el.id)}><path onClick={(e) => savePurchase ( el, e, el.id)} d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/></svg>
                         </button>
                     </div>
             </div>

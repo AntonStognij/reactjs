@@ -4,6 +4,7 @@ const serchElem = (arr, id) => {
             return arr[i]
         }
     }
+    return null
 }
 
 export {serchElem}
