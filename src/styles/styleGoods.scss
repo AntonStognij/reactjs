@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+   
     .good{
         width: 30%;
         padding: 15px;
@@ -9,12 +10,20 @@
         flex-direction: column;
         border: 1px solid #eef0ef;
         margin-top: 25px;
+        &:hover{
+            border: 1px solid #4db1cb;
+            transition: 0.5s;
+        }
         .shopping{
             width: 50px;
             height: 50px;
             display: flex;
             align-items: stretch;
             border: none;
+            &:hover{
+                background:  #4db1cb;
+                transition: 0.5s;
+            }
         }
         .img-good{
             height: 350px;
@@ -26,7 +35,7 @@
         }
         .price{
             color: #aec680;
-            font-size: 20px;
+            font-size: 22px;
         }
         .svg {
             z-index: -1;

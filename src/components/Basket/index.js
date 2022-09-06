@@ -9,12 +9,10 @@ const dellСhoice = (id, arr) => {
     const newArr = arr.filter((el) => {
     return el.id != id
     })
-    console.log(newArr)
+ 
     setСhoice(newArr)
 }
-const styleElem = ()=> {
-    choice.length >0 ? "block" :"none"
-}
+
     return choice.length ?  (  <div className="wrap basket"> {choice.map((el) => {
                    return  <div key = {el.id} className="basket-good">
                     <img className = "basket-img-good" src= {el.image} alt="goods"/>
@@ -32,7 +30,7 @@ const styleElem = ()=> {
                 <button className="make">MAKE A PURCHASE</button>
             </div>
                
-           ) : <h3>dcdcdc</h3>
+           ) : <h3 className="empty">Shopping cart is empty</h3>
 }
 
 export default Basket;
