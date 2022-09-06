@@ -1,12 +1,12 @@
 import React, {useEffect, useContext} from "react";
 import { ContextGoods , ContextPurchase, ContextСhoice, ContextProduct} from "store/context";
-import {serchElem} from "../../helpers"
+import {serchElem, clear } from "../../helpers"
 
 const Goods = () =>  {
     const {goods, setGoods} = useContext(ContextGoods)
     const {purchase, setPurchase} = useContext(ContextPurchase)
     const {choice, setСhoice} = useContext(ContextСhoice)
-    // const [product, setProduct] = useContext(ContextProduct)
+    const {product, setProduct} = useContext(ContextProduct)
     useEffect(() => {
         fetch('https://fakestoreapi.com/products/')
             .then(res => res.json())
@@ -16,63 +16,20 @@ const Goods = () =>  {
     //функция меняет количество покупок + сохраняет выбор в сторе
     function savePurchase (choiceGoods, e, id) {
         e.stopPropagation();
-        console.log ("choiceGoods" , choiceGoods)
-        console.log ("id" , id)
-        console.log("choice", choice)
         let element = serchElem(choice, id)
         if (!element){
             choice.push(choiceGoods)
-            console.log("+")
-        }  
-        console.log("-")   
+        }   
         let purchaseCount = choice.length;
         setСhoice(choice)
         setPurchase(purchaseCount)
     }
 
-    // const modal = (product) =>{
-    //     setProduct(product)
-    // }
-    //отрисовівает выбранные товар
-    // const showElem = (elem, arr, e) => {
-    //     e.stopPropagation();
-    //     var elemHtml = e.target;
-    //     var check = elemHtml.matches('.btn');
-    //     if (!check) {
-    //         window.history.pushState({}, '', "/ggg")
-    //         window.route =  window.history.pushState({}, '', "/ggg")
-    //         const main = document.getElementById("main");
-    //         main.innerHTML = ""
-    //         const elemWithArr = serchElem(arr, elem )
-    //         main.innerHTML = `  <div class="wrap">
-    //         <h2 class = "h2-good">${elemWithArr.title}</h2>
-    //         <div class="block-goods">
-    //         <img class = "img-good" src= ${elemWithArr.image} alt="img-good"/>
-    //         <div class="goods-block-text">
-    //             <div class="text">
-    //                 <h3>Description</h3>
-    //                 <p>${elemWithArr.description}</p>
-    //                 <p class="price">$ ${elemWithArr.price}</p>
-    //             </div>
-    //             <div class="shopping-block-btn">
-    //             <button class="btn-purch">
-    //             Add a purchase
-    //             </button>
-    //             </div>
-               
-    //         </div>
-    //         </div>          
-    //      </div>`
-
-    //      //клик на кнопку
-    //     let elementHtml = document.querySelector(".btn-purch")
-    //     elementHtml.addEventListener("click", function(event){
-    //         savePurchase (elemWithArr, event, elemWithArr.id)
-       
-    //     })
-    //     }
-    // }
-    
+    const modal = (description) =>{
+        setProduct(clear(product, 0))
+        let newProd = [...product, description]
+        setProduct(newProd)
+    }
 
     return (
         <main id = "main">

@@ -6,6 +6,9 @@
     box-sizing: border-box;
     font-family: "Inter";
 }
+#root {
+    position: relative;
+}
 //хедер
 .wrap {
     max-width: 80%;

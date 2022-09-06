@@ -12,7 +12,7 @@ function Init() {
     const [goods, setGoods] = useState([])
     const [purchase, setPurchase] = useState(0)
     const [choice, setСhoice] = useState([])
-    const [product, setProduct] = useState({})
+    const [product, setProduct] = useState([])
     return (
         <React.StrictMode>
             <BrowserRouter>
